@@ -1,6 +1,8 @@
 # GCP_Session_Apr_2019
 A brief introduction to GCP.
 
+Refer on Coursera - GCP Fundamentals: Core Infrastructure
+
 ## Basics
 ### List Zones
 
@@ -62,5 +64,16 @@ service apache2 restart
 ```
 
 ### Cloud Storage bucket
+
+```
+export LOCATION=US
+
+#make a bucket after your projectID env var
+gsutil mb -l $LOCATION gs://$DEVSHELL_PROJECT_ID
+
+#retrieve a banner image from a publicly accessible Cloud Storage location
+gsutil cp gs://cloud-training/gcpfci/my-excellent-blog.png my-excellent-blog.png
+```
+
 
 
