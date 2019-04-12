@@ -16,6 +16,7 @@ gcloud compute zones list | grep us-central1
 gcloud config set compute/zone us-central1-c
 ```
 
+## Compute Engine
 ### Create instances ssh and ping
 
 ```
@@ -39,10 +40,7 @@ curl http://localhost
 
 curl http://my-vm-1/
 ```
-
-## Compute Engine
-### Create instance 
-
+### Create instance with options
 ```
 gcloud compute instances create "my-vm-3" \
 --machine-type "n1-standard-1" \
@@ -51,7 +49,7 @@ gcloud compute instances create "my-vm-3" \
 --subnet "default"
 ```
 
-### Instance Setup for Demo 
+### Create with Console GUI
 
 Compute Engine -> VM instance -> Create -> Name it -> Region+Zone -> default Machine Type -> Boot Disk (Image) = Debian GNU/Linux 9(stretch) -> Identity and API access -> Firewall = Allow HTTP traffic-> Management, security, disks, networking, sole tenancy -> Startup script
 
