@@ -51,8 +51,6 @@ gcloud compute instances create "my-vm-3" \
 --subnet "default"
 ```
 
-## Cloud Storage
-
 ### Instance Setup for Demo 
 
 Compute Engine -> VM instance -> Create -> Name it -> Region+Zone -> default Machine Type -> Boot Disk (Image) = Debian GNU/Linux 9(stretch) -> Identity and API access -> Firewall = Allow HTTP traffic-> Management, security, disks, networking, sole tenancy -> Startup script
@@ -62,6 +60,8 @@ apt-get update
 apt-get install apache2 php php-mysql -y
 service apache2 restart
 ```
+
+## Cloud Storage
 
 ### Cloud Storage bucket
 
