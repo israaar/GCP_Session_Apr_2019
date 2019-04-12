@@ -83,8 +83,51 @@ gsutil acl ch -u allUsers:R gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png
 
 ```
 
-### Kubernetes Engine
+## Kubernetes Engine
+### Start a cluster, Deploy a container, Run Services & Expose, Replicate.
+```
+export MY_ZONE=us-central1-a
 
+#Start a cluster and configure it to run 2 nodes.
+gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 2
+
+#Kubernetes container runs in pods
+#Deploying a single pod containing nginx container. 
+kubectl run nginx --image=nginx:1.10.0
+
+kubectl get pods
+
+#expose to internet
+kubectl expose deployment nginx --port 80 --type LoadBalancer
+
+kubectl get services
+
+#scale to 3 pods
+kubectl scale deployment nginx --replicas 3
+
+kubectl get pods
+
+kubectl get services
 ```
 
+## App Engine
+### Get an App Engine Application and launch an application.
 
+```
+git clone https://github.com/GoogleCloudPlatform/appengine-guestbook-python
+
+cd appengine-guestbook-python
+
+ls -l
+
+cat app.yaml
+
+#Do web Preview in cloud shell after starting
+dev_appserver.py ./app.yaml
+
+#Deploy to App engine
+gcloud app deploy ./index.yaml ./app.yaml
+
+#View on internet
+https://PROJECT_ID.appspot.com/
+```
