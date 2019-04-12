@@ -66,6 +66,7 @@ service apache2 restart
 ### Cloud Storage bucket
 
 ```
+#Cloud Shell
 export LOCATION=US
 
 #make a bucket after your projectID env var
@@ -73,7 +74,17 @@ gsutil mb -l $LOCATION gs://$DEVSHELL_PROJECT_ID
 
 #retrieve a banner image from a publicly accessible Cloud Storage location
 gsutil cp gs://cloud-training/gcpfci/my-excellent-blog.png my-excellent-blog.png
+
+#copy banner to newly created CStore bucket
+gsutil cp my-excellent-blog.png gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png
+
+#publicy available to all
+gsutil acl ch -u allUsers:R gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png
+
 ```
 
+### Kubernetes Engine
+
+```
 
 
