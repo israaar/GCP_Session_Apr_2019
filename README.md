@@ -111,7 +111,7 @@ kubectl get services
 ```
 
 ## App Engine
-### Get an App Engine Application and launch an application.
+### Get an App Engine Application, launch, test and deploy to App Engine.
 
 ```
 git clone https://github.com/GoogleCloudPlatform/appengine-guestbook-python
@@ -120,6 +120,7 @@ cd appengine-guestbook-python
 
 ls -l
 
+#template file
 cat app.yaml
 
 #Do web Preview in cloud shell after starting
